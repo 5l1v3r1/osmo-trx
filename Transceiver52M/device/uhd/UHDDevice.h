@@ -133,7 +133,7 @@ public:
 		ERROR_UNHANDLED = -4,
 	};
 
-private:
+protected:
 	double setTxGain(double db, size_t chan) {OSMO_ASSERT(false); return 0.0f; }
 	double getTxGain(size_t chan = 0) { OSMO_ASSERT(false); return 0.0f; };
 	double maxTxGain(void) { OSMO_ASSERT(false); return 0.0f; };
