@@ -101,6 +101,10 @@ public:
 	double maxRxGain(void) { return rx_gain_max; }
 	double minRxGain(void) { return rx_gain_min; }
 
+	double setTxGain(double db, size_t chan) {OSMO_ASSERT(false); return 0.0f; }
+	double getTxGain(size_t chan = 0) { OSMO_ASSERT(false); return 0.0f; };
+	double maxTxGain(void) { OSMO_ASSERT(false); return 0.0f; };
+
 	double setPowerAttenuation(int atten, size_t chan);
 	double getPowerAttenuation(size_t chan = 0);
 
@@ -134,10 +138,6 @@ public:
 	};
 
 protected:
-	double setTxGain(double db, size_t chan) {OSMO_ASSERT(false); return 0.0f; }
-	double getTxGain(size_t chan = 0) { OSMO_ASSERT(false); return 0.0f; };
-	double maxTxGain(void) { OSMO_ASSERT(false); return 0.0f; };
-
 	uhd::usrp::multi_usrp::sptr usrp_dev;
 	uhd::tx_streamer::sptr tx_stream;
 	uhd::rx_streamer::sptr rx_stream;
